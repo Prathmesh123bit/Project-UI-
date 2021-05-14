@@ -4,14 +4,9 @@ import pandas as pd
 import requests
 from openpyxl import load_workbook
 from bs4 import BeautifulSoup
-from test import Displaying_data
+from wordclouddata import Displaying_data
 
-## create an array with URLs
-#urls = ['https://ndtv.in/india-news/centre-says-it-may-blacklist-certain-telecom-equipment-vendors-amid-tension-with-china-2339437',
- #           'https://ndtv.in/world-news/us-biden-declared-national-security-team-three-women-included-2329307'
 
-    
-#]
 def Web_Scrapper(urls):
     st.markdown("<h1 style='text-align: center; color: white;'>Polarity Classification</h1>", unsafe_allow_html=True)
     for url in urls:
@@ -38,7 +33,7 @@ def Web_Scrapper(urls):
         
         for item in description_ele:
             description_name.append(item.text)
-        #print(description_name)
+      
     
         
         str1 = ''.join(description_name)
@@ -55,27 +50,21 @@ def Web_Scrapper(urls):
         st.text_area("Description",y,1000)
 
         print("\n")
-        #display_data(y)
-        rand=y.replace('.','.\n')
-        st.text(rand)
-        st.write("Sentences")
+       
+        Sentence=y.replace('.','.\n')
+        
         st.write("\t\t\t\tPolarity")
         cols=st.beta_columns(3)
-        cols[0].write(rand)
+        #cols[0].write(Sentence)
         cols[2].write("Polarity")
-        st.write(len(y))
-        st.markdown(
-            f"""
-            <style>
-            <br> <br>       
-
-            }}
-            
-
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-        Displaying_data(y)
-       
+        st.write(len(y))      
+    
+    #if st.button("Anaalyze in Detail"):
+     #   annalyze_in_detail(Sentence)
+    st.markdown("""<br>""",True)
+        
+    Displaying_data(y)
+#def annalyze_in_detail(Sentence):
+    #st.write("Sentences")
+ 
         

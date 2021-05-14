@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from test import Displaying_data
+from wordclouddata import Displaying_data
 #from indiatv import web_Scrapping
 #import plotly.graph_objects as go
 #df=pd.DataFrame(
@@ -10,8 +10,8 @@ from test import Displaying_data
 #st.table(df.style.set_precision(2))
  
 def display_data(des):
-    st.write(des)
-    des1=des.split(".\n")
+    #st.write(des)
+    #des1=des.split(".\n")
     data={
         '':{'Polarity':'Pos','Sentence':des}
     }

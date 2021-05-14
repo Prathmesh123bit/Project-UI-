@@ -54,4 +54,16 @@ def Web_Scrapping():
 
 
 
-
+year_df = pd.DataFrame(
+    data={
+        '':{'Polarity':'Pos','Sentence':des}
+    }
+            df['read_at_year'].dropna().value_counts()).reset_index()
+        year_df = year_df.sort_values(by='index')
+        fig = Figure()
+        ax = fig.subplots()
+        sns.barplot(x=year_df['index'],
+                    y=year_df['read_at_year'], color='goldenrod', ax=ax)
+        ax.set_xlabel('Year')
+        ax.set_ylabel('Books Read')
+        st.pyplot(fig)
