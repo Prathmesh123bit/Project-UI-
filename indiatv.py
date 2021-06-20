@@ -4,10 +4,10 @@ import requests
 import csv
 import pandas as pd
 from csv import reader
-from trial import display_data
+from display_data import display_data
 from wordclouddata import Displaying_data
 
-def web_Scrapping(urls):
+def web_Scrape(urls):
     st.markdown("<h1 style='text-align: center; color: white;'>Polarity Classification</h1>", unsafe_allow_html=True)
     summary = []
     session = requests.Session()
@@ -38,12 +38,18 @@ def web_Scrapping(urls):
         Sentence_break=y.replace('.','.\n')
        # st.text(rand)
        
+        
+     
+        st.write(Sentence_break)    
+        
         st.write("\t\t\t\tPolarity")
         cols=st.beta_columns(4)
         cols[0].write(Sentence_break)
         cols[2].write("Polarity")
         st.write(len(y))
         st.markdown("""<br>""",True)
-        #display_data(Sentence_break)
-        Displaying_data(y)
+            #display_data(Sentence_break)
+        
+
+    Displaying_data(y)
         

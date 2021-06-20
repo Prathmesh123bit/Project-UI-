@@ -7,21 +7,14 @@ from bs4 import BeautifulSoup
 from wordclouddata import Displaying_data
 
 
-def Web_Scrapper(urls):
+def web_Scrapping(urls):
     st.markdown("<h1 style='text-align: center; color: white;'>Polarity Classification</h1>", unsafe_allow_html=True)
     for url in urls:
         page=requests.get(url)
         page.text
         soup=BeautifulSoup(page.text,'html.parser')
-        soup.find('p', class_='ft-social--txt').decompose()
-        soup.find('div', class_='ft-social--wrap').decompose()
-        soup.find('div',  attrs={'id':'jiosaavn-widget'}).decompose()
-        soup.find('div',  attrs={'class':'ins_instory_dv'}).decompose()
-
-        soup.find('aside', class_='col-300').decompose()
-        soup.find('div',  attrs={'class':'reltd-main'}).decompose()
-        
-        headline_ele=soup.find("div",{'class':"sp-ttl-wrp"}).h1.text
+        soup.find('div', class_='fedback-sec').decompose()
+        headline_ele=soup.find("div",{'class':"content-area"}).h1.text
         print("headline:",headline_ele)
         print("\n")
         

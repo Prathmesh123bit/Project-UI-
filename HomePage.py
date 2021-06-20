@@ -29,8 +29,8 @@ st.markdown(
  
 
 st.markdown("<h1 style='text-align: center; color: white;'>Sentiment Analysis Of Hindi News Articles</h1>", unsafe_allow_html=True)
-
-st.markdown("<h5 style='text-align: center; color: Red;'>A Ui based Model which is used to find the Polarity of the articles based on the sentiments</h5>", unsafe_allow_html=True)
+st.markdown("""<br><br>""",True)
+st.markdown("<h3 style='text-align: center; color: yellow;,text-font:20px'>A Ui based Model which is used to find the Polarity of the articles based on the sentiments</h3>", unsafe_allow_html=True)
 
 
 Polarity()
